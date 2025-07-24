@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.11.0/math.min.js"></script>
+  <title>Calculator App</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head> 
+<body>
+  <h1>Calculator</h1>
+  <div class="body">
+    <div class="calculation">
+      <input type="text" name="cal" id="cal" style="background: none; height: 40px; border: none; width: 150px;">
+    </div>
+    <div class="con1">
+      <button class="inner" onclick="calcuate(this)">%</button>
+      <button class="inner" onclick="squareRoot()"><i class="fa-solid fa-square-root-variable"></i></button>
+      <button class="inner">CE</button>
+      <button class="inner" style="background-color: #222831; color: white;" onmouseover="location.reload()">C</button>
+    </div>
+    <div class="con1">
+      <button class="inner" onclick="calcuate(this)">7</button>
+      <button class="inner" onclick="calcuate(this)">8</button>
+      <button class="inner" onclick="calcuate(this)">9</button>
+      <button class="inner" style="background-color: #ff6969; color: white;" onclick="calcuate(this)">-</button>
+    </div>
+    <div class="con1">
+      <button class="inner" onclick="calcuate(this)">4</button> 
+      <button class="inner" onclick="calcuate(this)">5</button>
+      <button class="inner" onclick="calcuate(this)">6</button>
+      <button class="inner" style="background-color: #0065f8; color: white;" onclick="calcuate(this)">*</button>
+    </div>
+    <div class="con1">
+      <button class="inner" onclick="calcuate(this)">1</button>
+      <button class="inner" onclick="calcuate(this)">2</button>
+      <button class="inner" onclick="calcuate(this)">3</button>
+      <button class="inner" style="background-color: #ffeb00; color: white;" onclick="calcuate(this)">+</button>
+    </div>
+    <div class="con1">
+      <button class="inner" onclick="calcuate(this)">.</button>
+      <button class="inner" onclick="calcuate(this)">0</button>
+      <button class="inner" onmouseover="final1()">=</button>
+      <button class="inner" style="background-color: #74E291; color: white;" onclick="calcuate(this)">/</button>
+    </div>
+  </div>
+</body>
+<script src="index.js"></script>
+</html>

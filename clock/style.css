@@ -1,0 +1,135 @@
+body{
+  background-color: white;
+  color: balck;
+  text-align: center;
+  transition: all 1s ease;
+}
+.div{
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+button{
+  display: flex;
+  justify-content: flex-end;
+  margin-left: 100px;
+  height: 40px;
+  width: 150px;
+  font-size: 20px;
+  background-color: blue;
+  border-radius: 10px;
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+  box-shadow: #7AE2CF;
+}
+.darkmode{
+  background-color: black;
+  color: white;
+}
+.darkmode button{
+  background-color: #7AE2CF;
+}
+.se{
+  display: flex;
+  justify-content: center;
+
+}
+.time{
+  margin: 1px;
+  background-color: #D2E9E9;
+  color: white;
+  height: 100px;
+  width: 80px;
+  border: 2px solid #E3F4F4;
+  font-size: 25px;
+  display: grid;
+  border-radius: 50px;
+  place-items: center;
+  text-align: center;
+}
+.sec{
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform-origin: bottom center;
+  transition: transform 0.2s ease-in-out;
+  height: 100px;
+  width: 2px;
+  background-color: red;
+  z-index: -1;
+}
+.min{
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform-origin: bottom center;
+  transition: transform 0.2s ease-in-out;
+  height: 80px;
+  width: 3px;
+  background-color: #273F4F;
+  z-index: -2;
+}
+.hour{
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform-origin: bottom center;
+  transition: transform 0.2s ease-in-out;
+  height: 60px;
+  width: 5px;
+  background-color: #273F4F;
+  z-index: -3;
+}
+.cursor{
+  position: absolute;
+  bottom: 46%;
+  left: 49%;
+  height: 7px;
+  width: 7px;
+  border-radius: 5px;
+  border: 2px solid red;
+  background-color: red;
+}
+.analogue{
+  height: 210px;
+  width: 210px;
+  border: 4px solid #FFFDEC;
+  position: absolute;
+  bottom: 30%;
+  left: 44%;
+  border-radius: 105px;
+}
+.date_par{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 25%;
+  left: 46%;
+}
+.date{
+  margin-top: 5px;
+  margin-left: 5px;
+  font-size: 18px;
+}
+.sty{
+  color: white;
+  height: 25px;
+  width: 25px;
+  border-radius: 13px;
+  background-color: #0B1D51;
+}
+.darkmode .cursor{
+  border: 2px solid red;
+  background-color: red;
+}
+.darkmode .hour{
+  background-color: #F7F7F8;
+}
+.darkmode .min{
+  background-color: #F7F7F8;
+}
+.darkmode .sty{
+  color: black;
+    background-color: #EEEEEE;
+}
