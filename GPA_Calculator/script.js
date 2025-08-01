@@ -218,6 +218,7 @@ button2.addEventListener("click",()=>{
         num += value2
   }
   let final = point/num
-  document.querySelector(".final_gpa").innerText = final
+  let final_roundup = Math.floor(final)
+  document.querySelector(".final_gpa").innerText = final_roundup
 })
 
