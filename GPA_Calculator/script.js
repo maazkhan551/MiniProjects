@@ -2,8 +2,7 @@ const button1 = document.querySelector(".btn1")
 const form = document.querySelector('form')
 const form_class = document.querySelector(".form")
 let height = 400;
-let inputs = document.querySelectorAll("input")
-let input_array = Array.from(inputs)
+const subjects = document.querySelectorAll(".subject")
 
 function addGrade(select){
   const option1 = document.createElement("option")
@@ -89,6 +88,7 @@ function addPoints(select1){
   select1.appendChild(opt2)
   select1.appendChild(opt3)
   select1.appendChild(opt4)
+  select1.appendChild(opt5)
   select1.appendChild(opt6)
   select1.appendChild(opt7)
   select1.appendChild(opt8)
@@ -98,7 +98,7 @@ function addPoints(select1){
 }
 
 button1.addEventListener("click",()=>{
-  height += 50
+  height += 100
   form_class.style.height = `${height}px`
   subject = document.createElement("div")
   subject.classList.add("subject")
@@ -136,7 +136,6 @@ button1.addEventListener("click",()=>{
   subject.prepend(input)
   form.appendChild(subject)
 
-  input_array.push(input) 
 
   const selects = options.querySelectorAll("select");
   options.addEventListener("change", () => {
@@ -169,19 +168,15 @@ button1.addEventListener("click",()=>{
 options = document.querySelectorAll('.options');
 for (let i=0;i<options.length;i++){
   choice = options[i].querySelectorAll("select");
-  console.log(choice)
   options[i].addEventListener("change",()=>{
   if ( choice[0].value === "A"){
        choice[1].value = "4.00"
-      console.log( choice[1].value)
   }
   else if ( choice[0].value === "A-"){
        choice[1].value = "3.67"
-      console.log( choice[1].value)
   }
   else if ( choice[0].value === "B+"){
        choice[1].value = "3.33"
-      console.log( choice[1].value)
   }
   else if ( choice[0].value === "B") {
        choice[1].value = "3.00";
@@ -202,6 +197,73 @@ for (let i=0;i<options.length;i++){
     } 
   })
 }
+
+function previous(cgpa){
+  let save = {
+  subject: [],
+  Grades:[],
+  Points:[]
+}
+  let grades = document.querySelectorAll(".grade select")
+  let points = document.querySelectorAll(".points select")
+  let inputs = document.querySelectorAll("input[type='text'][placeholder='Enter your subject']")
+    inputs.forEach((sub,index) => {
+      if (sub.value.trim() !== "") {
+      save.subject.push(sub.value.trim());
+  } 
+  });
+   grades.forEach((sub,index) => {
+      if (sub.value.trim() !== "") {
+      save.Grades.push(sub.value.trim());
+  }
+  });
+  points.forEach((sub,index) => {
+      if (sub.value.trim() !== "") {
+      save.Points.push(sub.value.trim());
+  }
+  });
+  let main_pre = document.createElement("div");
+  main_pre.classList.add("mainElement")
+  let visit_data = document.createElement("div");
+  visit_data.classList.add("hist");
+  const subjs = document.createElement("div");
+  const grds = document.createElement("div");
+  const pts = document.createElement("div");
+  subjs.classList.add("Subjects");
+  grds.classList.add("Grades")
+  pts.classList.add("Points");
+  save.subject.forEach((sub)=>{
+      const p = document.createElement("div")
+      p.textContent = sub;
+      subjs.appendChild(p)
+  })
+  save.Grades.forEach((sub)=>{
+      const p = document.createElement("div")
+      p.textContent = sub;
+      grds.appendChild(p)
+  })
+  save.Points.forEach((sub)=>{
+      const p = document.createElement("div")
+      p.textContent = sub;
+      pts.appendChild(p)
+  })
+  const gpa = document.createElement("div");
+  gpa.classList.add("cgpa");
+  gpa.textContent = `CGPA : ${cgpa}`;
+  visit_data.appendChild(subjs)
+  visit_data.appendChild(grds)
+  visit_data.appendChild(pts);
+  grds.style.cssText = "margin-left:50px;"
+  pts.style.cssText = "margin-left:50px;"
+  main_pre.style.cssText = "background-color:black;margin:10px auto; width:300px;padding:10px; color:white;border-radius:10px;"
+  visit_data.style.cssText = "display:flex; "
+  main_pre.appendChild(visit_data)
+   main_pre.appendChild(gpa)
+  document.querySelector("body").appendChild(main_pre)
+
+}
+
+
 let num = 0
 let point = 0
 button2 = document.querySelector('.btn2')
@@ -218,7 +280,23 @@ button2.addEventListener("click",()=>{
         num += value2
   }
   let final = point/num
-  let final_roundup = Math.floor(final)
+  let final_roundup = isNaN(final) ? 0 : Number(final.toFixed(3));
   document.querySelector(".final_gpa").innerText = final_roundup
+  if(final_roundup>0){
+  const circle = document.querySelector(".circular-progress");
+  const value_ = document.querySelector(".progress-value");
+    let start = 0, end = final_roundup, step = 20,num_ = 0;
+    let progress = setInterval(() => {
+      start+=0.1;
+      start = parseFloat(start.toFixed(1))
+      num_ = start*25;
+      value_.textContent = `${start} CGPA`;
+      circle.style.background = `conic-gradient(#EAE4D5 ${num_*3.6}deg, #ededed 0deg)`;
+      if (start >= end) {
+        clearInterval(progress);
+      }
+    }, step);
+  } 
+  previous(final_roundup);
+ 
 })
-

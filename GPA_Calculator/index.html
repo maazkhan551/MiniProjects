@@ -7,7 +7,14 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="start">
+  <h1>CGPA Calculator</h1>
+  <div class="para">
+  <p>No more manual calculations—just enter your grades and let us do the rest.</p>
+  </div>
+  </div>
   <div class="form">
+    <div class="main_form">
     <form action="#">
     <div class="subject">
         <input type="text"  placeholder="Enter your subject">
@@ -50,9 +57,17 @@
     </form>
     <button class="btn1">Add Subject</button>
     <button class="btn2">See result</button>
+    </div>
+    <div class="result">
+      <div class="circular-progress">
+      <span class="progress-value">CGPA</span>
+    </div>
     <div class="gpa">CGPA:
       <div class="final_gpa"></div>
     </div>
+    </div>
+  </div>
+  <div class="record">
   </div>
   <script src="script.js"></script>
 </body>
