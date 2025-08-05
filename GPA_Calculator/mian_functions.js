@@ -105,5 +105,5 @@ function previous(cgpa){
   visit_data.style.cssText = "display:flex; "
   main_pre.appendChild(visit_data)
   main_pre.appendChild(gpa)
-  document.querySelector("body").appendChild(main_pre)
+  document.querySelector(".cgpa").appendChild(main_pre)
 }

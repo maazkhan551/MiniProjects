@@ -129,7 +129,7 @@ button2.addEventListener("click",()=>{
       start = parseFloat(start.toFixed(1))
       num_ = start*25;
       value_.textContent = `${start} CGPA`;
-      circle.style.background = `conic-gradient(#EAE4D5 ${num_*3.6}deg, #ededed 0deg)`;
+      circle.style.background = `conic-gradient(#819A91 ${num_*3.6}deg, #ededed 0deg)`;
       if (start >= end) {
         clearInterval(progress);
       }
