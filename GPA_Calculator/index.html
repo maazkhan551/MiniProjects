@@ -5,16 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GPA Calculator</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
 </head>
 <body>
-  <img src="GPA.png" alt="gpaimage" height="500px" width="100%" >
-  <!-- <div class="start">
-  <h1>CGPA Calculator</h1>
-  <div class="para">
-  <p>No more manual calculations—just enter your grades and let us do the rest.</p>
+  <nav class="navbar">
+    <ul class="navbar_cl">
+      <li>Home</li>
+      <li><a href="#form">CGPA</a></li>
+      <li><a href="">SGPA</a></li>
+      <li>more tips</li>
+    </ul>
+  </nav>
+  <h1 style="text-align: center;">CGPA Calculator</h1>
+  <div class="features">
+   <div class="start">
+    <img src="images/logo_side.png" alt="">
+   </div>
+   <div class="highlight">
+    <h2>What Makes This GPA Calculator Useful?</h2>
+    <ul>
+      <li>Automatically computes the Cumulative Grade Point Average from all subjects.</li>
+      <li>Visually represents CGPA as a circular animated progress bar.</li>
+      <li>Calculates Semester Grade Point Average based on individual semester inputs.</li>
+    </ul>
+   </div>
   </div>
-  </div> -->
-  <div class="form">
+  <div class="form" id="form">
     <div class="main_form">
     <form action="#">
     <div class="subject">
@@ -51,13 +67,17 @@
         </select>
         </div>
         <div class="credit">
-          <input type="text" placeholder="Credit hours">
+          <input type="number" placeholder="Credit hours">
         </div>
         </div>
       </div>
     </form>
     <button class="btn1">Add Subject</button>
     <button class="btn2">See result</button>
+    <div class="err-mess">
+      <button class="cross">❌</button>
+      <p>Please Enter Valid data⚠️</p>
+    </div>
     </div>
     <div class="result">
       <div class="circular-progress">
@@ -68,8 +88,10 @@
     </div>
     </div>
   </div>
+
   <div class="record">
   </div>
+  <script src="mian_functions.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
